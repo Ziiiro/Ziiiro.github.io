@@ -36,7 +36,11 @@ body {
 ol, ul {
 	list-style: none;
 }
-
+.report_btn{
+	text-align: center;
+	margin-bottom: 24px;
+}
+.report_btn button{outline: none}
 blockquote, q {
 	quotes: none;
 }
