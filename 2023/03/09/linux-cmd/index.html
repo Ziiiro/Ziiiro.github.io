@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+
+  <meta name="description" content="600 条最强 Linux 命令总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux cmd">
+<meta property="og:url" content="http://example.com/2023/03/09/linux-cmd/index.html">
+<meta property="og:site_name" content="FUN">
+<meta property="og:description" content="600 条最强 Linux 命令总结">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-09T07:11:26.000Z">
+<meta property="article:modified_time" content="2023-11-03T08:54:48.615Z">
+<meta property="article:author" content="F">
+<meta property="article:tag" content="v">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/03/09/linux-cmd/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>linux cmd | FUN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">FUN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/09/linux-cmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="F">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FUN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux cmd
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-03-09 15:11:26" itemprop="dateCreated datePublished" datetime="2023-03-09T15:11:26+08:00">2023-03-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-11-03 16:54:48" itemprop="dateModified" datetime="2023-11-03T16:54:48+08:00">2023-11-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/v/" itemprop="url" rel="index"><span itemprop="name">v</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="600-条最强-Linux-命令总结"><a href="#600-条最强-Linux-命令总结" class="headerlink" title="600 条最强 Linux 命令总结"></a>600 条最强 Linux 命令总结</h1><span id="more"></span>
+
+<p><strong>1. 基本命令</strong></p>
+<p>uname -m显示机器的处理器架构-<br>uname -r 显示正在使用的内核版本-<br>dmidecode -q 显示硬件系统部件-<br>(SMBIOS &#x2F; DMI) hdparm -i &#x2F;dev&#x2F;hda 罗列一个磁盘的架构特性-<br>hdparm -tT &#x2F;dev&#x2F;sda 在磁盘上执行测试性读取操作系统信息-<br>arch 显示机器的处理器架构-<br>uname -m显示机器的处理器架构-<br>uname -r 显示正在使用的内核版本-<br>dmidecode -q 显示硬件系统部件 - (SMBIOS &#x2F; DMI)-<br>hdparm -i &#x2F;dev&#x2F;hda 罗列一个磁盘的架构特性-<br>hdparm -tT &#x2F;dev&#x2F;sda 在磁盘上执行测试性读取操作-<br>cat&#x2F;proc&#x2F;cpuinfo 显示CPU info的信息-<br>cat&#x2F;proc&#x2F;interrupts 显示中断-<br>cat&#x2F;proc&#x2F;meminfo 校验内存使用-<br>cat&#x2F;proc&#x2F;swaps 显示哪些swap被使用-<br>cat&#x2F;proc&#x2F;version显示内核的版本-<br>cat&#x2F;proc&#x2F;net&#x2F;dev 显示网络适配器及统计-<br>cat&#x2F;proc&#x2F;mounts 显示已加载的文件系统-<br>lspci -tv 罗列 PCI 设备-<br>lsusb -tv 显示 USB 设备-<br>date 显示系统日期-<br>cal2007显示2007年的日历表-<br>date041217002007.00设置日期和时间 - 月日时分年.秒-<br>clock -w将时间修改保存到 BIOS </p>
+<p>（向右滑动查看）</p>
+<p><strong>2. 关机</strong></p>
+<p>shutdown-hnow关闭系统(1)-<br>init0关闭系统(2)-<br>telinit0关闭系统(3)-<br>shutdown-hhours:minutes&amp;按预定时间关闭系统-<br>shutdown-c取消按预定时间关闭系统-<br>shutdown-rnow重启(1)-<br>reboot重启(2)-<br>logout注销 </p>
+<p>（向右滑动查看）</p>
+<p><strong>3. 文件和目录</strong></p>
+<p>cd &#x2F;home 进入’&#x2F; home’目录’-<br>cd .. 返回上一级目录-<br>cd ..&#x2F;.. 返回上两级目录-<br>cd 进入个人的主目录-<br>cd ~user1 进入个人的主目录-<br>cd - 返回上次所在的目录-<br>pwd 显示工作路径-<br>ls 查看目录中的文件-<br>ls -F 查看目录中的文件-<br>ls -l 显示文件和目录的详细资料-<br>ls -a 显示隐藏文件-<br>ls *[0-9]* 显示包含数字的文件名和目录名-<br>tree 显示文件和目录由根目录开始的树形结构(1)-<br>lstree 显示文件和目录由根目录开始的树形结构(2)-<br>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’-<br>mkdir dir1 dir2 同时创建两个目录-<br>mkdir -p &#x2F;tmp&#x2F;dir1&#x2F;dir2 创建一个目录树-<br>rm -f file1 删除一个叫做’file1’的文件’-<br>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’-<br>rm -rf dir1 删除一个叫做’dir1’的目录并同时删除其内容-<br>rm -rf dir1 dir2 同时删除两个目录及它们的内容-<br>mv dir1 new_dir 重命名&#x2F;移动 一个目录-<br>cp file1 file2 复制一个文件-<br>cp dir&#x2F;* . 复制一个目录下的所有文件到当前工作目录-<br>cp -a &#x2F;tmp&#x2F;dir1 . 复制一个目录到当前工作目录-<br>cp -a dir1 dir2 复制一个目录-<br>ln -s file1 lnk1 创建一个指向文件或目录的软链接-<br>ln file1 lnk1 创建一个指向文件或目录的物理链接-<br>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm)-<br>file file1 outputs the mime type of the file as text-<br>iconv -l 列出已知的编码-<br>iconv -f fromEncoding -t toEncoding inputFile &gt; outputFile creates a new from the given input file by assuming it is encoded in fromEncoding and converting it to toEncoding.-<br>find . -maxdepth 1 -name *.jpg -print -exec convert “{}” -resize 80x60 “thumbs&#x2F;{}” \; batch resize files in the current directory and send them to a thumbnails directory (requires convert from Imagemagick) </p>
+<p>（向右滑动查看）</p>
+<p><strong>4. 文件搜索</strong></p>
+<p>find &#x2F; -name file1 从’&#x2F;‘开始进入根文件系统搜索文件和目录-<br>find &#x2F; -user user1 搜索属于用户’user1’的文件和目录-<br>find &#x2F;home&#x2F;user1 -name \*.bin 在目录’&#x2F; home&#x2F;user1’中搜索带有’.bin’结尾的文件-<br>find &#x2F;usr&#x2F;bin -typef -atime +100 搜索在过去100天内未被使用过的执行文件-<br>find &#x2F;usr&#x2F;bin -typef -mtime -10 搜索在10天内被创建或者修改过的文件-<br>find &#x2F; -name \*.rpm -execchmod 755’{}’\; 搜索以’.rpm’结尾的文件并定义其权限-<br>find &#x2F; -xdev -name \*.rpm 搜索以’.rpm’结尾的文件，忽略光驱、捷盘等可移动设备-<br>locate \*.ps 寻找以’.ps’结尾的文件 - 先运行’updatedb’命令-<br>whereis halt 显示一个二进制文件、源码或man的位置-<br>whichhalt 显示一个二进制文件或可执行文件的完整路径 </p>
+<p>（向右滑动查看）</p>
+<p><strong>5. 挂载一个文件系统</strong></p>
+<p>mount &#x2F;dev&#x2F;hda2 &#x2F;mnt&#x2F;hda2 挂载一个叫做hda2的盘 - 确定目录’&#x2F; mnt&#x2F;hda2’已经存在-<br>umount &#x2F;dev&#x2F;hda2 卸载一个叫做hda2的盘 - 先从挂载点’&#x2F; mnt&#x2F;hda2’退出-<br>fuser -km &#x2F;mnt&#x2F;hda2 当设备繁忙时强制卸载-<br>umount -n &#x2F;mnt&#x2F;hda2 运行卸载操作而不写入 &#x2F;etc&#x2F;mtab 文件- 当文件为只读或当磁盘写满时非常有用-<br>mount &#x2F;dev&#x2F;fd0 &#x2F;mnt&#x2F;floppy 挂载一个软盘-<br>mount &#x2F;dev&#x2F;cdrom &#x2F;mnt&#x2F;cdrom 挂载一个cdrom或dvdrom-<br>mount &#x2F;dev&#x2F;hdc &#x2F;mnt&#x2F;cdrecorder 挂载一个cdrw或dvdrom-<br>mount &#x2F;dev&#x2F;hdb &#x2F;mnt&#x2F;cdrecorder 挂载一个cdrw或dvdrom-<br>mount -oloopfile.iso &#x2F;mnt&#x2F;cdrom 挂载一个文件或ISO镜像文件-<br>mount -t vfat &#x2F;dev&#x2F;hda5 &#x2F;mnt&#x2F;hda5 挂载一个Windows FAT32文件系统-<br>mount &#x2F;dev&#x2F;sda1 &#x2F;mnt&#x2F;usbdisk 挂载一个usb 捷盘或闪存设备-<br>mount -t smbfs -ousername&#x3D;user,password&#x3D;pass &#x2F;&#x2F;WinClient&#x2F;share &#x2F;mnt&#x2F;share 挂载一个windows网络共享 </p>
+<p>（向右滑动查看）</p>
+<p><strong>6. 磁盘空间</strong></p>
+<p> df -h 显示已经挂载的分区列表-<br>ls -lSr |more 以尺寸大小排列文件和目录-<br>du -sh dir1 估算目录’dir1’已经使用的磁盘空间’-<br>du -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小-<br>rpm -q -a –qf ‘%10{SIZE}t%{NAME}n’ | sort -k1,1n 以大小为依据依次显示已安装的rpm包所使用的空间 (fedora, redhat类系统)-<br>dpkg-query -W -f&#x3D;’${Installed-Size;10}t${Package}n’ | sort -k1,1n 以大小为依据显示已安装的deb包所使用的空间 (ubuntu, debian类系统) </p>
+<p>（向右滑动查看）</p>
+<p><strong>7. 用户和群组</strong></p>
+<p>groupadd group_name 创建一个新用户组-<br>groupdel group_name 删除一个用户组-<br>groupmod -n new_group_name old_group_name 重命名一个用户组-<br>useradd -c”Name Surname “-g admin -d &#x2F;home&#x2F;user1 -s &#x2F;bin&#x2F;bash user1 创建一个属于”admin”用户组的用户-<br>useradd user1 创建一个新用户-<br>userdel -r user1 删除一个用户 (‘-r’排除主目录)-<br>usermod -c”User FTP”-gsystem-d &#x2F;ftp&#x2F;user1 -s &#x2F;bin&#x2F;nologin user1 修改用户属性-<br>passwd 修改口令-<br>passwd user1 修改一个用户的口令 (只允许root执行)-<br>chage -E2005-12-31user1 设置用户口令的失效期限-<br>pwck 检查’&#x2F;etc&#x2F;passwd’的文件格式和语法修正以及存在的用户-<br>grpck 检查’&#x2F;etc&#x2F;passwd’的文件格式和语法修正以及存在的群组-<br>newgrp group_name 登陆进一个新的群组以改变新创建文件的预设群组 </p>
+<p>（向右滑动查看）</p>
+<p><strong>8.文件的权限，使用“+”设置权限，使用“-”用于取消</strong></p>
+<p>ls-lh显示权限-<br>ls&#x2F;tmp | pr -T5 -W$COLUMNS 将终端划分成5栏显示-<br>chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限-<br>chmodgo-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限-<br>chown user1 file1 改变一个文件的所有人属性-<br>chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性-<br>chgrp group1 file1 改变文件的群组-<br>chown user1:group1 file1 改变一个文件的所有人和群组属性-<br>find&#x2F; -perm -u+s 罗列一个系统中所有使用了SUID控制的文件-<br>chmodu+s &#x2F;bin&#x2F;file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限-<br>chmodu-s &#x2F;bin&#x2F;file1 禁用一个二进制文件的 SUID位-<br>chmod g+s &#x2F;home&#x2F;public 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的-<br>chmod g-s &#x2F;home&#x2F;public 禁用一个目录的 SGID 位-<br>chmodo+t &#x2F;home&#x2F;public 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件-<br>chmodo-t &#x2F;home&#x2F;public 禁用一个目录的 STIKY 位-<br>chmod +x文件路径 为所有者、所属组和其他用户添加执行的权限-<br>chmod -x文件路径 为所有者、所属组和其他用户删除执行的权限-<br>chmodu+x文件路径 为所有者添加执行的权限-<br>chmod g+x文件路径 为所属组添加执行的权限-<br>chmodo+x文件路径 为其他用户添加执行的权限-<br>chmod ug+x文件路径 为所有者、所属组添加执行的权限-<br>chmod &#x3D;wx 文件路径 为所有者、所属组和其他用户添加写、执行的权限，取消读权限-<br>chmod ug&#x3D;wx 文件路径 为所有者、所属组添加写、执行的权限，取消读权限 </p>
+<p>（向右滑动查看）</p>
+<p><strong>9. 文件的特殊属性 ，使用 “+” 设置权限，使用 “-” 用于取消</strong></p>
+<p>chattr+a file1 只允许以追加方式读写文件-<br>chattr +c file1 允许这个文件能被内核自动压缩&#x2F;解压-<br>chattr +d file1 在进行文件系统备份时，dump程序将忽略这个文件-<br>chattr +i file1 设置成不可变的文件，不能被删除、修改、重命名或者链接-<br>chattr +s file1 允许一个文件被安全地删除-<br>chattr +S file1 一旦应用程序对这个文件执行了写操作，使系统立刻把修改的结果写到磁盘-<br>chattr +u file1 若文件被删除，系统会允许你在以后恢复这个被删除的文件-<br>lsattr 显示特殊的属性 </p>
+<p>（向右滑动查看）</p>
+<p><strong>10. 打包和压缩文件</strong></p>
+<p>bunzip2 file1.bz2 解压一个叫做’file1.bz2’的文件-<br>bzip2 file1 压缩一个叫做’file1’的文件-<br>gunzip file1.gz 解压一个叫做’file1.gz’的文件-<br>gzip file1 压缩一个叫做’file1’的文件-<br>gzip -9file1 最大程度压缩-<br>rarafile1.rar test_file 创建一个叫做’file1.rar’的包-<br>rarafile1.rar file1 file2 dir1 同时压缩’file1’,’file2’以及目录’dir1’-<br>rarxfile1.rar 解压rar包-<br>unrarxfile1.rar 解压rar包-<br>tar -cvf archive.tar file1 创建一个非压缩的 tarball-<br>tar -cvf archive.tar file1 file2 dir1 创建一个包含了’file1’,’file2’以及’dir1’的档案文件-<br>tar -tfarchive.tar 显示一个包中的内容-<br>tar -xvf archive.tar 释放一个包-<br>tar -xvf archive.tar -C &#x2F;tmp 将压缩包释放到 &#x2F;tmp目录下-<br>tar -cvfj archive.tar.bz2 dir1 创建一个bzip2格式的压缩包-<br>tar -xvfj archive.tar.bz2 解压一个bzip2格式的压缩包-<br>tar -cvfz archive.tar.gz dir1 创建一个gzip格式的压缩包-<br>tar -xvfz archive.tar.gz 解压一个gzip格式的压缩包-<br>zip file1.zip file1 创建一个zip格式的压缩包-<br>zip -r file1.zip file1 file2 dir1 将几个文件和目录同时压缩成一个zip格式的压缩包-<br>unzip file1.zip 解压一个zip格式压缩包 </p>
+<p>（向右滑动查看）</p>
+<p><strong>11. RPM 包</strong></p>
+<p>rpm -ivhpackage.rpm 安装一个rpm包-<br>rpm -ivh –nodeepspackage.rpm 安装一个rpm包而忽略依赖关系警告-<br>rpm -Upackage.rpm 更新一个rpm包但不改变其配置文件-<br>rpm -Fpackage.rpm 更新一个确定已经安装的rpm包-<br>rpm -e package_name.rpm 删除一个rpm包-<br>rpm -qa 显示系统中所有已经安装的rpm包-<br>rpm -qa | grep httpd 显示所有名称中包含”httpd”字样的rpm包-<br>rpm -qi package_name 获取一个已安装包的特殊信息-<br>rpm -qg”System Environment&#x2F;Daemons”显示一个组件的rpm包-<br>rpm -ql package_name 显示一个已经安装的rpm包提供的文件列表-<br>rpm -qc package_name 显示一个已经安装的rpm包提供的配置文件列表-<br>rpm -q package_name –whatrequires 显示与一个rpm包存在依赖关系的列表-<br>rpm -q package_name –whatprovides 显示一个rpm包所占的体积-<br>rpm -q package_name –scripts 显示在安装&#x2F;删除期间所执行的脚本l-<br>rpm -q package_name –changelog 显示一个rpm包的修改历史-<br>rpm -qf &#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf 确认所给的文件由哪个rpm包所提供-<br>rpm -qppackage.rpm -l 显示由一个尚未安装的rpm包提供的文件列表-<br>rpm –import&#x2F;media&#x2F;cdrom&#x2F;RPM-GPG-KEY 导入公钥数字证书-<br>rpm –checksigpackage.rpm 确认一个rpm包的完整性-<br>rpm -qa gpg-pubkey 确认已安装的所有rpm包的完整性-<br>rpm -V package_name 检查文件尺寸、 许可、类型、所有者、群组、MD5检查以及最后修改时间-<br>rpm -Va 检查系统中所有已安装的rpm包- 小心使用-<br>rpm -Vppackage.rpm 确认一个rpm包还未安装-<br>rpm2cpiopackage.rpm | cpio –extract –make-directories *bin* 从一个rpm包运行可执行文件-<br>rpm -ivh &#x2F;usr&#x2F;src&#x2F;redhat&#x2F;RPMS&#x2F;`arch`&#x2F;package.rpm 从一个rpm源码安装一个构建好的包-<br>rpmbuild –rebuild package_name.src.rpm 从一个rpm源码构建一个 rpm 包 </p>
+<p>（向右滑动查看）</p>
+<p><strong>12. YUM 软件包升级器</strong></p>
+<p>yum install package_name 下载并安装一个rpm包-<br>yum localinstall package_name.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系-<br>yumupdatepackage_name.rpm 更新当前系统中所有安装的rpm包-<br>yumupdatepackage_name 更新一个rpm包-<br>yumremovepackage_name 删除一个rpm包-<br>yumlist列出当前系统中安装的所有包-<br>yumsearchpackage_name 在rpm仓库中搜寻软件包-<br>yum clean packages 清理rpm缓存删除下载的包-<br>yum clean headers 删除所有头文件-<br>yum cleanall删除所有缓存的包和头文件 </p>
+<p>（向右滑动查看）</p>
+<p><strong>13. deb 包</strong>-</p>
+<p>dpkg -i package.deb安装&#x2F;更新一个deb包-<br>dpkg -r package_name 从系统删除一个deb包-<br>dpkg -l显示系统中所有已经安装的deb包-<br>dpkg -l|grephttpd 显示所有名称中包含”httpd”字样的deb包-<br>dpkg -s package_name 获得已经安装在系统中一个特殊包的信息-<br>dpkg -L package_name 显示系统中已经安装的一个deb包所提供的文件列表-<br>dpkg –contents package.deb显示尚未安装的一个包所提供的文件列表-<br>dpkg -S &#x2F;bin&#x2F;ping 确认所给的文件由哪个deb包提供-<br>APT 软件工具 (Debian, Ubuntu 以及类似系统)-<br>apt-getinstall package_name 安装&#x2F;更新一个deb包-<br>apt-cdrom install package_name 从光盘安装&#x2F;更新一个deb包-<br>apt-getupdate升级列表中的软件包-<br>apt-getupgrade 升级所有已安装的软件-<br>apt-getremovepackage_name 从系统删除一个deb包-<br>apt-getcheck 确认依赖的软件仓库正确-<br>apt-getclean 从下载的软件包中清理缓存-<br>apt-cachesearchsearched-package 返回包含所要搜索字符串的软件包名称 </p>
+<p>（向右滑动查看）</p>
+<p><strong>14.查看文件内容</strong></p>
+<p>catfile1 从第一个字节开始正向查看文件的内容-<br>tac file1 从最后一行开始反向查看一个文件的内容-<br>more file1 查看一个长文件的内容-<br>less file1 类似于’more’命令，但是它允许在文件中和正向操作一样的反向操作-<br>head -2file1 查看一个文件的前两行-<br>tail -2file1 查看一个文件的最后两行-<br>tail -f&#x2F;var&#x2F;log&#x2F;messages实时查看被添加到一个文件中的内容 </p>
+<p>（向右滑动查看）</p>
+<p><strong>15. 文本处理</strong></p>
+<p> catfile1 file2 … |command&lt;&gt; file1_in.txt_or_file1_out.txt generalsyntaxfortext manipulation using PIPE, STDINandSTDOUT-<br>catfile1 |command( sed,grep, awk,grep, etc…) &gt; result.txt 合并一个文件的详细说明文本，并将简介写入一个新文件中-<br>catfile1 |command( sed,grep, awk,grep, etc…) &gt;&gt; result.txt 合并一个文件的详细说明文本，并将简介写入一个已有的文件中-<br>grepAug &#x2F;var&#x2F;log&#x2F;messages在文件’&#x2F;var&#x2F;log&#x2F;messages’中查找关键词”Aug”-<br>grep^Aug &#x2F;var&#x2F;log&#x2F;messages在文件’&#x2F;var&#x2F;log&#x2F;messages’中查找以”Aug”开始的词汇-<br>grep[0-9] &#x2F;var&#x2F;log&#x2F;messages选择’&#x2F;var&#x2F;log&#x2F;messages’文件中所有包含数字的行-<br>grepAug -R &#x2F;var&#x2F;log&#x2F;* 在目录’&#x2F;var&#x2F;log’及随后的目录中搜索字符串”Aug”-<br>sed’s&#x2F;stringa1&#x2F;stringa2&#x2F;g’example.txt 将example.txt文件中的”string1”替换成”string2”-<br>sed’&#x2F;^$&#x2F;d’example.txt 从example.txt文件中删除所有空白行-<br>sed’&#x2F; *#&#x2F;d; &#x2F;^$&#x2F;d’example.txt 从example.txt文件中删除所有注释和空白行-<br>echo’esempio’|tr’[:lower:]‘’[:upper:]‘合并上下单元格内容-<br>sed -e’1d’result.txt 从文件example.txt 中排除第一行-<br>sed -n’&#x2F;stringa1&#x2F;p’查看只包含词汇”string1”的行-<br>sed -e’s&#x2F; *$&#x2F;&#x2F;‘example.txt 删除每一行最后的空白字符-<br>sed -e’s&#x2F;stringa1&#x2F;&#x2F;g’example.txt 从文档中只删除词汇”string1”并保留剩余全部-<br>sed -n’1,5p;5q’example.txt 查看从第一行到第5行内容-<br>sed -n’5p;5q’example.txt 查看第5行-<br>sed -e’s&#x2F;00*&#x2F;0&#x2F;g’example.txt 用单个零替换多个零-<br>cat-n file1 标示文件的行数-<br>catexample.txt | awk’NR%2&#x3D;&#x3D;1’删除example.txt文件中的所有偶数行-<br>echoabc| awk’{print $1}’查看一行第一栏-<br>echoabc| awk’{print $1,$3}’查看一行的第一和第三栏-<br>paste file1 file2 合并两个文件或两栏的内容-<br>paste -d’+’file1 file2 合并两个文件或两栏的内容，中间用”+”区分-<br>sortfile1 file2 排序两个文件的内容-<br>sortfile1 file2 | uniq 取出两个文件的并集(重复的行只保留一份)-<br>sortfile1 file2 | uniq -u删除交集，留下其他的行-<br>sortfile1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件)-<br>comm -1file1 file2 比较两个文件的内容只删除’file1’所包含的内容-<br>comm -2file1 file2 比较两个文件的内容只删除’file2’所包含的内容-<br>comm -3file1 file2 比较两个文件的内容只删除两个文件共有的部分 </p>
+<p>（向右滑动查看）</p>
+<p><strong>16. 字符设置和文件格式转换</strong></p>
+<p> dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX-<br>unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS-<br>recode ..HTML&lt;page.txt&gt;page.html 将一个文本文件转换成html-<br>recode -l | more 显示所有允许的转换格式 </p>
+<p>（向右滑动查看）</p>
+<p><strong>17.文件系统分析</strong></p>
+<p> badblocks -v &#x2F;dev&#x2F;hda1 检查磁盘hda1上的坏磁块-<br>fsck&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上linux文件系统的完整性-<br>fsck.ext2&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上ext2文件系统的完整性-<br>e2fsck&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上ext2文件系统的完整性-<br>e2fsck -j&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上ext3文件系统的完整性-<br>fsck.ext3&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上ext3文件系统的完整性-<br>fsck.vfat&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上fat文件系统的完整性-<br>fsck.msdos&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上dos文件系统的完整性-<br>dosfsck&#x2F;dev&#x2F;hda1 修复&#x2F;检查hda1磁盘上dos文件系统的完整性 </p>
+<p>（向右滑动查看）</p>
+<p><strong>18. 初始化一个文件系统</strong></p>
+<p> mkfs&#x2F;dev&#x2F;hda1在hda1分区创建一个文件系统-<br>mke2fs&#x2F;dev&#x2F;hda1在hda1分区创建一个linuxext2的文件系统-<br>mke2fs-j&#x2F;dev&#x2F;hda1在hda1分区创建一个linuxext3(日志型)的文件系统-<br>mkfs-tvfat32-F&#x2F;dev&#x2F;hda1创建一个FAT32文件系统-<br>fdformat-n&#x2F;dev&#x2F;fd0格式化一个软盘-<br>mkswap&#x2F;dev&#x2F;hda3创建一个swap文件系统 </p>
+<p>（向右滑动查看）</p>
+<p><strong>19. SWAP文件系统</strong></p>
+<p> mkswap&#x2F;dev&#x2F;hda3 创建一个swap文件系统-<br>swapon &#x2F;dev&#x2F;hda3 启用一个新的swap文件系统-<br>swapon &#x2F;dev&#x2F;hda2 &#x2F;dev&#x2F;hdb3 启用两个swap分区 </p>
+<p>（向右滑动查看）</p>
+<p><strong>20. 备份</strong></p>
+<p> dump-0aj -f &#x2F;tmp&#x2F;home0.bak &#x2F;home 制作一个’&#x2F;home’目录的完整备份-<br>dump-1aj -f &#x2F;tmp&#x2F;home0.bak &#x2F;home 制作一个’&#x2F;home’目录的交互式备份-<br>restore -if&#x2F;tmp&#x2F;home0.bak 还原一个交互式备份-<br>rsync -rogpav –delete&#x2F;home &#x2F;tmp 同步两边的目录-<br>rsync -rogpav -e ssh –delete&#x2F;home ip_address:&#x2F;tmp 通过SSH通道rsync-<br>rsync -az -e ssh –deleteip_addr:&#x2F;home&#x2F;public &#x2F;home&#x2F;local 通过ssh和压缩将一个远程目录同步到本地目录-<br>rsync -az -e ssh –delete&#x2F;home&#x2F;local ip_addr:&#x2F;home&#x2F;public 通过ssh和压缩将本地目录同步到远程目录-<br>dd bs&#x3D;1Mif=&#x2F;dev&#x2F;hda | gzip | ssh user@ip_addr’dd of&#x3D;hda.gz’通过ssh在远程主机上执行一次备份本地磁盘的操作-<br>ddif=&#x2F;dev&#x2F;sdaof=&#x2F;tmp&#x2F;file1 备份磁盘内容到一个文件-<br>tar -Puf backup.tar &#x2F;home&#x2F;user 执行一次对’&#x2F;home&#x2F;user’目录的交互式备份操作-<br>( cd&#x2F;tmp&#x2F;local&#x2F;&amp;&amp; tar c . ) | ssh -C user@ip_addr’cd &#x2F;home&#x2F;share&#x2F; &amp;&amp; tar x -p’通过ssh在远程目录中复制一个目录内容-<br>( tar c &#x2F;home ) | ssh -C user@ip_addr’cd &#x2F;home&#x2F;backup-home &amp;&amp; tar x -p’通过ssh在远程目录中复制一个本地目录-<br>tar cf - . | (cd &#x2F;tmp&#x2F;backup ; tar xf - ) 本地将一个目录复制到另一个地方，保留原有权限及链接-<br>find&#x2F;home&#x2F;user1 -name ‘*.txt’ | xargs cp -av –target-directory&#x3D;&#x2F;home&#x2F;backup&#x2F;--parents 从一个目录查找并复制所有以’.txt’结尾的文件到另一个目录-<br>find &#x2F;var&#x2F;log -name’*.log’| tar cv –files-from=- | bzip2 &gt; log.tar.bz2 查找所有以’.log’结尾的文件并做成一个bzip包-<br>ddif=&#x2F;dev&#x2F;hdaof=&#x2F;dev&#x2F;fd0 bs&#x3D;512count&#x3D;1做一个将 MBR (Master Boot Record)内容复制到软盘的动作-<br>ddif=&#x2F;dev&#x2F;fd0of=&#x2F;dev&#x2F;hda bs&#x3D;512count&#x3D;1从已经保存到软盘的备份中恢复MBR内容 </p>
+<p>（向右滑动查看）</p>
+<p><strong>21.光盘</strong></p>
+<p> cdrecord -v gracetime&#x3D;2dev&#x3D;&#x2F;dev&#x2F;cdrom -eject blank&#x3D;fast -force 清空一个可复写的光盘内容-<br>mkisofs &#x2F;dev&#x2F;cdrom &gt;cd.iso 在磁盘上创建一个光盘的iso镜像文件-<br>mkisofs &#x2F;dev&#x2F;cdrom | gzip &gt; cd_iso.gz 在磁盘上创建一个压缩了的光盘iso镜像文件-<br>mkisofs -J -allow-leading-dots -R -V”Label CD”-iso-level4-o.&#x2F;cd.iso data_cd 创建一个目录的iso镜像文件-<br>cdrecord -v dev&#x3D;&#x2F;dev&#x2F;cdromcd.iso 刻录一个ISO镜像文件-<br>gzip -dc cd_iso.gz | cdrecord dev&#x3D;&#x2F;dev&#x2F;cdrom - 刻录一个压缩了的ISO镜像文件-<br>mount -oloopcd.iso &#x2F;mnt&#x2F;iso 挂载一个ISO镜像文件-<br>cd-paranoia -B 从一个CD光盘转录音轨到 wav 文件中-<br>cd-paranoia –”-3”从一个CD光盘转录音轨到 wav 文件中（参数-3）-<br>cdrecord –scanbus 扫描总线以识别scsi通道-<br>ddif=&#x2F;dev&#x2F;hdc | md5sum 校验一个设备的md5sum编码，例如一张 CD </p>
+<p>（向右滑动查看）</p>
+<p><strong>22. 网络（以太网和WIFI无线）</strong></p>
+<p> ifconfig eth0 显示一个以太网卡的配置-<br>ifup eth0 启用一个 ‘eth0’ 网络设备-<br>ifdown eth0 禁用一个 ‘eth0’ 网络设备-<br>ifconfig eth0 192.168.1.1 netmask 255.255.255.0 控制IP地址-<br>ifconfig eth0 promisc 设置 ‘eth0’ 成混杂模式以嗅探数据包 (sniffing)-<br>dhclient eth0 以dhcp模式启用 ‘eth0’-<br>route -nshowroutingtable-<br>routeadd-net0&#x2F;0gw IP_Gateway configuradefaultgateway-<br>routeadd-net192.168.0.0netmask255.255.0.0gw192.168.1.1configurestaticroutetoreach network’192.168.0.0&#x2F;16’-<br>route del0&#x2F;0gw IP_gateway removestaticroute-<br>echo”1”&gt; &#x2F;proc&#x2F;sys&#x2F;net&#x2F;ipv4&#x2F;ip_forwardactivateip routing-<br>hostnameshowhostnameofsystem-<br>host <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> lookup hostnametoresolvenametoip addressandviceversa(1)-<br>nslookup <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> lookup hostnametoresolvenametoip addressandviceversa(2)-<br>iplinkshowshowlinkstatusofall interfaces-<br>mii-tool eth0showlinkstatusof’eth0’-<br>ethtool eth0showstatisticsofnetwork card’eth0’-<br>netstat -tupshowall active network connectionsandtheir PID-<br>netstat -tuplshowall network services listeningonthesystemandtheir PID-<br>tcpdump tcp port80showallHTTPtraffic-<br>iwlistscanshowwireless networks-<br>iwconfig eth1showconfigurationofa wireless network card-<br>hostnameshowhostname-<br>host <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> lookup hostnametoresolvenametoip addressandviceversa-<br>nslookup <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> lookup hostnametoresolvenametoip addressandviceversa-<br>whois <a target="_blank" rel="noopener" href="http://www.example.com/">www.example.com</a> lookuponWhoisdatabase </p>
+<p>（向右滑动查看）</p>
+<p><strong>23.列出目录内容</strong></p>
+<p> ls-a：显示所有文件（包括隐藏文件）；-<br>ls-l：显示详细信息；-<br>ls-R：递归显示子目录结构；-<br>ls-ld：显示目录和链接信息；-<br>ctrl+r：历史记录中所搜命令（输入命令中的任意一个字符）；-<br>Linux中以.开头的文件是隐藏文件；-<br>pwd:显示当前目录 </p>
+<p>（向右滑动查看）</p>
+<p><strong>24.查看文件的类型</strong></p>
+<p> file:查看文件的类型 </p>
+<p><strong>25. 复制文件目录</strong></p>
+<p><strong>1、</strong>cp****：复制文件和目录 cp源文件（文件夹）目标文件（文件夹）。</p>
+<p>常用参数：-r:递归复制整个目录树；-v：显示详细信息；</p>
+<p>复制文件夹时要在cp命令后面加一个-r参数：</p>
+<p>如：cp -r 源文件夹 目标文件夹。</p>
+<p><strong>2、</strong>t****<strong>ouch+文件名</strong>：当文件不存在的时候，创建相应的文件；当文件存在的时候，修改文件的创建时间。</p>
+<p>功能：生成一个空文件或修改文件的存取&#x2F;修改的时间记录值；</p>
+<p>touch * ：将当前下的文件时间修改为系统的当前时间；</p>
+<p>touch –d 20040210 test：将test文件的日期改为20040210；</p>
+<p>touch abc：若abc文件存在，则修改为系统的当前时间；若不存在，则生成一个为当前时间的空文件。</p>
+<p><strong>3、</strong>m****<strong>v 文件 目标目录</strong>：移动或重命名文件或目录（如果指定文件名，则可以重命名文件）。可以将文件及目录移到另一目录下，或更改文件及目录的名称。</p>
+<p>格式为：mv [参数]&lt;源文件或目录&gt; &lt;目标文件或目录&gt;</p>
+<p>mva.txt ..&#x2F;：将a.txt文件移动上层目录</p>
+<p>mv a.txt b.txt：将a.txt改名为b.txt</p>
+<p>mvdir2 ..&#x2F;：将dir2目录上移一层</p>
+<p><strong>4、****rm</strong>：删除文件</p>
+<p>常用参数：-i：交互式 -r：递归的删除包括目录中的所有内容。</p>
+<p><strong>5、</strong>mk****<strong>dir +文件夹名称</strong>：创建文件夹</p>
+<p><strong>6、</strong>rm**** <strong>-r +文件夹名称</strong>：删除文件夹（空文件夹和非空文件夹都可删除）；</p>
+<p>rmdir 文件夹名称：删除文件夹（只能删除空文件夹）。</p>
+<p><strong>7、****mkdir -p dir1&#x2F;dir2</strong>：在当前目录下创建dir1目录，并在dir1目录下创建dir2目录， 也就是连续创建两个目录（dir1&#x2F;和dir1&#x2F;dir2）。</p>
+<p><strong>8、</strong>rm****<strong>dir –p dir1&#x2F;dir2</strong>：删除dir1下的dir2目录，若dir1目录为空也删除它。</p>
+<p><strong>9、</strong>r******m ***：删除当前目录下的所有文件</p>
+<p><strong>10、</strong>-f****<strong>参数</strong>：强迫删除文件 rm –f *.txt：强迫删除所有以后缀名为txt文件。</p>
+<p><strong>11、****-i参数</strong>：删除文件时询问</p>
+<p>rm　–i * ：删除当前目录下的所有文件会有如下提示：</p>
+<p>rm:backup:is a directory　　　 遇到目录会略过</p>
+<p>rm: remove ‘myfiles.txt’ ? Y</p>
+<p>删除文件时会询问，可按Y或N键表示允许或拒绝删除文件。　</p>
+<p><strong>12、</strong>-r****<strong>参数</strong>：递归删除（连子目录一同删除，这是一个相当常用的参数）。</p>
+<p>rm -r test ：删除test目录（含test目录下所有文件和子目录）；</p>
+<p>rm -r *：删除所有文件（含当前目录所有文件、所有子目录和子目录下的文件） 一般在删除目录时r和f一起用，避免麻烦；</p>
+<p>rm -rf test ：强行删除、不加询问。</p>
+<p><strong>13、****grep</strong>：功能：在文件中搜索匹配的字符并进行输出。</p>
+<p>格式：grep[参数] &lt;要找的字串&gt; &lt;要寻找字 串的源文件&gt;</p>
+<p>greplinux test.txt：搜索test.txt文件中字符串linux并输出。</p>
+<p><strong>14、</strong>l****<strong>n命令</strong></p>
+<p>功能：在文件和目录之间建立链接</p>
+<p>格式：ln [参数] &lt;源文件或目录&gt; &lt;目标文件或目录&gt;</p>
+<p>链接分“软链接”和“硬链接”</p>
+<p>1.软链接:</p>
+<p>ln–s &#x2F;usr&#x2F;share&#x2F;do doc ：创建一个链接文件doc，并指向目录&#x2F;usr&#x2F;share&#x2F;do</p>
+<p>2.硬链接:</p>
+<p>ln &#x2F;usr&#x2F;share&#x2F;test hard：创建一个硬链接文件hard，这时对于test文件对应 的存储区域来说，又多了一个文件指向它。</p>
+<p><strong>26. 系统常用命令</strong></p>
+<p><strong>1、****显示命令</strong></p>
+<p>date:查看或设置当前系统的时间：格式化显示时间：+%Y–%m–%d；</p>
+<p>date -s:设置当前系统的时间；</p>
+<p>hwclock(clock)：显示硬件时钟时间(需要管理员权限)；</p>
+<p>cal：查看日历；</p>
+<p>格式cal [参数] 月年；</p>
+<p>cal：显示当月的日历 cal4 2004 ：显示2004年4月的日历；</p>
+<p>cal- y 2003：显示2003年的日历；</p>
+<p>uptime：查看系统运行时间。</p>
+<p><strong>2、****输出查看命令</strong></p>
+<p>echo：显示输入的内容 追加文件echo “liuyazhuang” &gt;&gt; liuyazhuang.txt</p>
+<p>cat：显示文件内容,也可以将数个文件合并成一个文件；</p>
+<p>格式：格式：cat[参数]&lt;文件名&gt;</p>
+<p>cat test.txt：显示test.txt文件内容；</p>
+<p>cat test.txt | more ：逐页显示test.txt文件中的内容；</p>
+<p>cat test.txt &gt;&gt; test1.txt ：将test.txt的内容附加到test1.txt文件之后；</p>
+<p>cat test.txt test2.txt &gt;readme.txt　: 将test.txt和test2.txt文件合并成readme.txt 文件；</p>
+<p>head:显示文件的头几行（默认10行） -n:指定显示的行数格式：head -n 文件名；</p>
+<p>tail：显示文件的末尾几行（默认10行）-n：指定显示的行数 -f：追踪显示文件更新 （一般用于查看日志，命令不会退出，而是持续显示新加入的内容）；</p>
+<p>格式：格式：tail[参数]&lt;文件名&gt;</p>
+<p>tail-10 &#x2F;etc&#x2F;passwd ：显示&#x2F;etc&#x2F;passwd&#x2F;文件的倒数10行内容；</p>
+<p>tail+10 &#x2F;etc&#x2F;passwd ：显示&#x2F;etc&#x2F;passwd&#x2F;文件从第10行开始到末尾的内容；</p>
+<p>more：用于翻页显示文件内容（只能向下翻页）；</p>
+<p>more命令是一般用于要显示的内容会超过一个画面长度的情况。为了避免画 面显示时瞬间就闪过去，用户可以使用more命令，让画面在显示满一页时暂停，此时可按空格健继续显示下一个画面，或按Q键停止显示；</p>
+<p>ls -al |more：以长格形式显示etc目录下的文件列表，显示满一个画面便暂停，可 按空格键继续显示下一画面，或按Q键跳离；</p>
+<p>less：翻页显示文件内容（带上下翻页）按下上键分页，按q退出；</p>
+<p>less命令的用法与more命令类似，也可以用来浏览超过一页的文件。所不同 的是less 命令除了可以按空格键向下显示文件外，还可以利用上下键来卷动文件。当要结束浏览时，只要在less命令的提示符“：”下按Q键即可；</p>
+<p>ls -al | less：以长格形式列出&#x2F;etc目录中所有的内容。用户可按上下键浏览或按Q键跳离。</p>
+<p><strong>3、查看硬件信息</strong></p>
+<p>Ispci：查看PCI设备 -v：查看详细信息</p>
+<p>Isusb：查看USB设备 -v：查看详细信息</p>
+<p>Ismod：查看加载的模块(驱动)</p>
+<p><strong>4、****关机、重启</strong></p>
+<p>shutdown关闭、重启计算机</p>
+<p>shutdown[关机、重启]时间 -h关闭计算机 -r：重启计算机</p>
+<p>如：立即关机：shutdown -h now</p>
+<p>10分钟后关机：shutdown -h +10</p>
+<p>23:30分关机：shutdown -h 23:30</p>
+<p>立即重启：shutdown -r now</p>
+<p>poweroff：立即关闭计算机</p>
+<p>reboot：立即重启计算机</p>
+<p><strong>5、****归档、压缩</strong></p>
+<p>zip:压缩文件 zip liuyazhuang.zip myfile 格式为：“zip 压缩后的zip文件文件名”</p>
+<p>unzip：解压文件 unzip liuyazhuang.zip</p>
+<p>gzip：压缩文件 gzip 文件名</p>
+<p>tar：归档文件</p>
+<p>tar -cvf out.tar liuyazhuang 打包一个归档（将文件”liuyazhuang”打包成一个归档）</p>
+<p>tar -xvf liuyazhuang.tar 释放一个归档（释放liuyazhuang.tar归档）</p>
+<p>tar -cvzf backup.tar.gz&#x2F;etc</p>
+<p>-z参数将归档后的归档文件进行gzip压缩以减少大小。</p>
+<p>-c：创建一个新tar文件</p>
+<p>-v：显示运行过程的信息</p>
+<p>-f：指定文件名</p>
+<p>-z：调用gzip压缩命令进行压缩</p>
+<p>-t：查看压缩文件的内容</p>
+<p>-x：解开tar文件</p>
+<p>tar -cvf test.tar *：将所有文件打包成test.tar,扩展名.tar需自行加上</p>
+<p>tar -zcvf test.tar.gz *：将所有文件打包成test.tar,再用gzip命令压缩</p>
+<p>tar -tf test.tar ：查看test.tar文件中包括了哪些文件</p>
+<p>tar -xvf test.tar 将test.tar解开</p>
+<p>tar -zxvf foo.tar.gz 解压缩</p>
+<p>gzip各gunzip命令</p>
+<p>gziptest.txt ：压缩文件时，不需要任何参数</p>
+<p>gizp–l test.txt.gz：显示压缩率</p>
+<p><strong>6、****查找</strong></p>
+<p>locate：快速查找文件、文件夹：locate keyword</p>
+<p>此命令需要预先建立数据库，数据库默认每天更新一次，可用updatedb命令手工建立、更新数据库。</p>
+<p>find查找位置查找参数</p>
+<p>如：</p>
+<p>find . -name *liuyazhuang* 查找当前目录下名称中含有”liuyazhuang”的文件</p>
+<p>find &#x2F; -name *.conf 查找根目录下（整个硬盘）下后缀为.conf的文件</p>
+<p>find &#x2F; -perm 777 查找所有权限是777的文件</p>
+<p>find &#x2F; -type d 返回根目录下所有的目录</p>
+<p>find . -name “a*“-exec ls -l {} \;</p>
+<p>find功能：用来寻找文件或目录</p>
+<p>格式：find [&lt;路径&gt;] [匹配条件]</p>
+<p>find &#x2F; -name httpd.conf 搜索系统根目录下名为httpd.conf的文件</p>
+<p><strong>7、****ctrl+c :终止当前的命令</strong></p>
+<p><strong>8、****who或w命令</strong></p>
+<p>功能：查看当前系统中有哪些用户登录</p>
+<p>格式：who&#x2F;w[参数]</p>
+<p><strong>9、****dmesg命令</strong></p>
+<p>功能：显示系统诊断信息、操作系统版本号、物理内存的大小以及其它信息。</p>
+<p><strong>10、</strong>d****<strong>f命令</strong></p>
+<p>功能：用于查看文件系统的各个分区的占用情况。</p>
+<p><strong>11、****du命令</strong></p>
+<p>功能：查看某个目录中各级子目录所使用的硬盘空间数。</p>
+<p>格式：du [参数] &lt;目录名&gt;</p>
+<p><strong>12、</strong>f****<strong>ree命令</strong></p>
+<p>功能：用于查看系统内存，虚拟内存（交换空间）的大小占用情况。</p>
+<p><strong>27. VIM</strong></p>
+<p>VIM是一款功能强大的命令行文本编辑器，在Linux中通过vim命令可以启动vim编辑器。</p>
+<p>一般使用vim + 目标文件路径 的形式使用vim</p>
+<p>如果目标文件存在，则vim打开目标文件，如果目标文件不存在，则vim新建并打开该文件。</p>
+<p>:q：退出vim编辑器</p>
+<p><strong>VIM模式</strong></p>
+<p>vim拥有三种模式：</p>
+<p><strong>（1）命令模式（常规模式）</strong></p>
+<p>vim启动后，默认进入命令模式，任何模式都可以通过esc键回到命令模式（可以多按几次），命令模式下可以键入不同的命令完成选择、复制、粘贴、撤销等操作。</p>
+<p><strong>命名模式常用命令如下：</strong>-</p>
+<p>i : 在光标前插入文本</p>
+<p>o:在当前行的下面插入新行</p>
+<p>dd:删除整行</p>
+<p>yy：将当前行的内容放入缓冲区（复制当前行）</p>
+<p>n+yy :将n行的内容放入缓冲区（复制n行）</p>
+<p>p:将缓冲区中的文本放入光标后（粘贴）</p>
+<p>u：撤销上一个操作</p>
+<p>r:替换当前字符</p>
+<p>&#x2F; 查找关键字</p>
+<p><strong>（2）插入模式</strong></p>
+<p>在命令模式下按 “ i “键，即可进入插入模式，在插入模式可以输入编辑文本内容，使用esc键可以返回命令模式。</p>
+<p><strong>（3）ex模式</strong></p>
+<p>在命令模式中按” : “键可以进入ex模式，光标会移动到底部，在这里可以保存修改或退出vim.</p>
+<p>ext模式常用命令如下：</p>
+<p>:w ：保存当前的修改</p>
+<p>:q ：退出</p>
+<p>:q! ：强制退出，保存修改</p>
+<p>:x :保存并退出，相当于:wq</p>
+<p>:set number 显示行号</p>
+<p>:! 系统命令 执行一个系统命令并显示结果</p>
+<p>:sh ：切换到命令行，使用ctrl+d切换回vim</p>
+<p><strong>28. 软件包管理命令(RPM)</strong></p>
+<p><strong>1、软件包的安装</strong></p>
+<p>使用RPM命令的安装模式可以将软件包内所有的组件放到系统中的正确路径，安装软件包的命令是:rpm –ivh wu-ftpd-2.6.2-8.i386.rpm</p>
+<p>i：作用rpm的安装模式 v: 校验文件信息h: 以＃号显示安装进度。</p>
+<p><strong>2、软件包的删除</strong></p>
+<p>删除模式会将指定软件包的内容全部删除，但并不包括已更改过的配置文件，删除RPM软件包的命令如下：rpm –e wu-ftpd</p>
+<p>注意：这里必须使用软件名“wu-ftpd”或”wu-ftpd-2.6.2-8而不是使用当初安装时的软件包名.wu-ftpd-2.6.2-8.i386.rpm</p>
+<p><strong>3、软件包升级</strong></p>
+<p>升级模式会安装用户所指定的更新版本，并删除已安装在系统中的相同软件包，升级软件包命令如下：rpm –Uvh wu-ftpd-2.6.2-8.i386.rpm –Uvh：升级参数。</p>
+<p><strong>4、软件包更新</strong></p>
+<p>更新模式下，rpm命令会检查在命令行中所指定的软件包是否比系统中原有的软件 包更新。如果情况属实，rpm命令会自动更新指定的软件包；反之，若系统中并没有指定软件包的较旧版本，rpm命令并不会安装此软件包。而在升级模式下，不管系统中是否有较旧的版本，rpm命令都会安装指定的软件包。</p>
+<p>rpm –Fvhwu-ftpd-2.6.2-8.i386.rpm -Fvh：更新参数</p>
+<p><strong>5、软件包查询</strong></p>
+<p>若要获取RPM软件包的相关信息，可以使用查询模式。使用-q参数可查询一个已 安装的软件包的内容。</p>
+<p>rpm –q wu-ftpd</p>
+<p>查询软件包所安装的位置：rpm –ql package-name</p>
+<p>rpm –ql xv (l参数：显示文件列表)</p>
+<p>end</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/v/" rel="tag"># v</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/09/markdown/" rel="prev" title="markdown">
+      <i class="fa fa-chevron-left"></i> markdown
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/10/wave-principle/" rel="next" title="波浪理论简述">
+      波浪理论简述 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+(function(){
+    if(''){
+        if (prompt('请输入文章密码') !== ''){
+            alert('密码错误！');
+            history.back();
+        }
+    }
+})();
+
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#600-%E6%9D%A1%E6%9C%80%E5%BC%BA-Linux-%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">600 条最强 Linux 命令总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">F</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">F</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
