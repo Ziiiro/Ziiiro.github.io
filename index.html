@@ -241,10 +241,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-11-03 00:00:00 / Modified: 16:54:48" itemprop="dateCreated datePublished" datetime="2023-11-03T00:00:00+08:00">2023-11-03</time>
+              <time title="Created: 2023-11-03 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-03T00:00:00+08:00">2023-11-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-11-05 14:08:40" itemprop="dateModified" datetime="2023-11-05T14:08:40+08:00">2023-11-05</time>
+              </span>
 
           
 
@@ -257,18 +263,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="python-配置相关"><a href="#python-配置相关" class="headerlink" title="python 配置相关"></a>python 配置相关</h2><ol>
-<li>指定源<br>pip install PyQt5 -i <a target="_blank" rel="noopener" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a> –trusted-host pypi.douban.com</li>
-<li>pip下载相关目录<br>python -m site pip</li>
-<li>虚拟环境配置<br>python -m venv “E:\github\components\p”</li>
-</ol>
-<h2 id="格式化打印"><a href="#格式化打印" class="headerlink" title="格式化打印"></a>格式化打印</h2><p>name &#x3D; “Alice”<br>age  &#x3D; 25</p>
-<ol>
-<li>print(f”My name is {name} and i am {age} years old.”)</li>
-<li>print(“My name is %s and i am %d years old.”%(name,age))</li>
-<li>print(“My name is {} and i am {} years old.”.format(name,age))</li>
-</ol>
-<h2 id="类的转换"><a href="#类的转换" class="headerlink" title="类的转换"></a>类的转换</h2><p>0x7E &gt;&gt; ‘7E’<br>y &#x3D; ‘’.join(‘%02X’ % i for i in recv_buf)</p>
+          <h2 id="python-配置相关"><a href="#python-配置相关" class="headerlink" title="python 配置相关"></a>python 配置相关</h2><pre><code>1) 指定源
+pip install PyQt5 -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com
+2) pip下载相关目录
+python -m site pip
+3) 虚拟环境配置
+python -m venv &quot;E:\github\components\p&quot;
+</code></pre>
+<h2 id="格式化打印"><a href="#格式化打印" class="headerlink" title="格式化打印"></a>格式化打印</h2><pre><code>name = &quot;Alice&quot;
+age  = 25
+1) print(f&quot;My name is &#123;name&#125; and i am &#123;age&#125; years old.&quot;)
+2) print(&quot;My name is %s and i am %d years old.&quot;%(name,age))
+3) print(&quot;My name is &#123;&#125; and i am &#123;&#125; years old.&quot;.format(name,age))
+</code></pre>
+<h2 id="类的转换"><a href="#类的转换" class="headerlink" title="类的转换"></a>类的转换</h2><pre><code>0x7E &gt;&gt; &#39;7E&#39;
+y = &#39;&#39;.join(&#39;%02X&#39; % i for i in recv_buf)
+</code></pre>
 
       
     </div>
