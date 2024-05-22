@@ -21,19 +21,24 @@
   </script>
 
 
-  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+  <meta name="description" content="预驱三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。 通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="future">
-<meta property="og:url" content="http://example.com/2023/11/11/future/index.html">
+<meta property="og:title" content="无感无刷方波">
+<meta property="og:url" content="http://example.com/2024/05/22/MOS%20mos/index.html">
 <meta property="og:site_name" content="FUN">
-<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:description" content="预驱三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。 通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-11-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-22T07:36:29.735Z">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.jpg">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_ds.jpg">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_app.jpg">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.jpg">
+<meta property="article:published_time" content="2024-05-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-22T03:13:58.834Z">
 <meta property="article:author" content="F">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.jpg">
 
-<link rel="canonical" href="http://example.com/2023/11/11/future/">
+<link rel="canonical" href="http://example.com/2024/05/22/MOS%20mos/">
 
 
 <script id="page-configurations">
@@ -46,7 +51,7 @@
   };
 </script>
 
-  <title>future | FUN</title>
+  <title>无感无刷方波 | FUN</title>
   
 
 
@@ -151,7 +156,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/11/future/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/22/MOS%20mos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +169,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          future
+          无感无刷方波
         </h1>
 
         <div class="post-meta">
@@ -173,16 +178,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2023-11-11 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-11T00:00:00+08:00">2023-11-11</time>
+              <time title="Created: 2024-05-22 00:00:00 / Modified: 11:13:58" itemprop="dateCreated datePublished" datetime="2024-05-22T00:00:00+08:00">2024-05-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-12-22 15:36:29" itemprop="dateModified" datetime="2023-12-22T15:36:29+08:00">2023-12-22</time>
-              </span>
 
           
 
@@ -195,18 +194,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="0cd5a86c21abab864e2d622d12a3829746340ec8a1daee5e55ebe0d83a9bd6b3">689f1e91d4827d4862a36504576a44a1e1b8a76bb429509ccd8b8302fd67180021890d1b8668b696a5b2071156122064ddd727bbfbf3c89a7fcff3bece01c781505447c495f66d24b249817f5e0f08615827f1ef7cce000c40f511243b40c830b63e3d70f3d3f417c1e83b13fd9fe9346c731010a27c118b0e877be8081155a0a2276965652ecd588be5ef06d58bd5761561e4f549f0c0496e939e9a818c3b0decd1a832a55e60f1d91ea33beb1b289fa6a378f17ce65adf4feb6d7bfc674e7becbf3356c5a4c0def4253decd2c8ea073c8b2505ee8a74dc8896fa396c08f5c874452a0897c8af354f9ab473f2d8b03acf53340a775819d737a8320ccd65aba339d13660704f45b34a9a332fe7c82a64bf25d9eb6dbc35db4926ba3f79ed6f0f9faf6f5ff32493b2507748bdd6114e96ae9d7cea6f4d47d0e395e9cf8291fd80ff4782da8365d03a748b4014fea91f0a</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <h1 id="预驱"><a href="#预驱" class="headerlink" title="预驱"></a>预驱</h1><p>三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。</p>
+<p>通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器，我们称之为“预驱”。在设计汽车风机、水泵、油泵等电机驱动控制器时，使用车规MCU+车规预驱+车规N沟道功率MOSFET，可以适配不同功率、各种通信方式和各种驱动方式。<strong>为了提供MOS管开通所需要的电压，需要自举升压电路，驱动芯片的意义正是自举升压相关的一些电路</strong></p>
+<p>电机在运转过程中可能会遇到堵转而导致过流，因此MOS驱动电路需要具有保护功能，以防止烧坏控制器或电机。</p>
+<p>对于单个NMOS来说，在开通时，需要提供瞬间大电流向MOS内的寄生电容充电，栅源电压（VGS）达到一定阈值后，MOS才能完全开通。在MOS开通后，还需要维持合适的栅源电压（VGS），才可以保持开通状态。</p>
+<p>对于低边MOS，其源极（S）接到电源负极，栅源电压容易满足，驱动较简单。</p>
+<p>对于高边MOS，其源极（S）接到电机相线，其电压是不确定的，如果需要开通，需要通过自举电路提供栅极电压，驱动较复杂。</p>
+<p>一般情况下，MOS的导通内阻都如图2所示，随着VGS的增大而降低，但VGS大于10V之后，下降曲线变得平缓。为了达到最小的导通电阻(RDSON)，VGS的取值通常为10~15V</p>
+<p><img src="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.jpg" alt="典型应用电路"></p>
+<table>
+<thead>
+<tr>
+<th align="left">BLDC无刷直流电机方案</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">MCU+预驱+驱动</td>
+<td>灵活，IC选择性高，适用于各类大中小功率的控制器</td>
+<td>集成度低                     PCB板面积较大</td>
+</tr>
+<tr>
+<td align="left">MCU+[预驱+驱动]</td>
+<td>针对单一功率应用，集成度高，PCB面积较小</td>
+<td>功率不能做大</td>
+</tr>
+<tr>
+<td align="left">[MCU+预驱]+驱动</td>
+<td>集成度较高，MOSFET可以灵活选择，适用于各类中小功率的控制器</td>
+<td>由于预驱集成在MCU中，预驱的耐压和驱动能力做不高，无法适应大功率控制器</td>
+</tr>
+<tr>
+<td align="left">SOC</td>
+<td>集成高，性能高，常用于塑封电机应用场合</td>
+<td>功率不能做大</td>
+</tr>
+</tbody></table>
+<h1 id="mos"><a href="#mos" class="headerlink" title="mos"></a>mos</h1><p>重点关注<strong>耐压值、耐流值、耐温值、开关损耗</strong><br><strong>电流选择</strong><br>电机驱动瞬间电流 &gt; 额定电流+5~8A<br>选择 MOS管漏极最大电流  &gt; 额定电流 * 10<br>如电机：额定功率&#x3D;0.5A  选择MOS管漏极最大电流 &gt; 5A<br>选择MOS管时注意：应该选择内阻小的MOS管<br>原因：内阻小，压降小，MOS管功耗小，发热量小；</p>
+<p><img src="https://ziiiro.github.io/images/foc/IR2101S_ds.jpg" alt="IR2101S 手册"></p>
+<p><img src="https://ziiiro.github.io/images/foc/IR2101S_app.jpg" alt="IR2101S 框图"></p>
+<p><img src="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.jpg" alt="MOS管主要参数"></p>
+
     </div>
 
     
@@ -221,13 +250,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/11/03/%E5%81%9A%E8%8F%9C%E5%B0%8F%E8%83%BD%E6%89%8B/" rel="prev" title="做菜小能手">
-      <i class="fa fa-chevron-left"></i> 做菜小能手
+    <a href="/2024/04/22/%E7%BB%8F%E6%B5%8E%E5%95%8A%E7%BB%8F%E6%B5%8E/" rel="prev" title="经济啊经济">
+      <i class="fa fa-chevron-left"></i> 经济啊经济
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/12/16/%E4%BB%B7%E6%A0%BC%E8%A1%8C%E4%B8%BA%E6%AD%A6%E5%99%A8%EF%BC%9A%E5%85%AD%E7%A7%8D%E8%A3%B8%20K%20%E4%BA%A4%E6%98%93%E4%BF%A1%E5%8F%B7/" rel="next" title="裸K">
-      裸K <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -286,6 +312,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E9%A9%B1"><span class="nav-number">1.</span> <span class="nav-text">预驱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mos"><span class="nav-number">2.</span> <span class="nav-text">mos</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
