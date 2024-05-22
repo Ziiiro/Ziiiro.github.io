@@ -28,15 +28,15 @@
 <meta property="og:site_name" content="FUN">
 <meta property="og:description" content="预驱三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。 通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.jpg">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_ds.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_app.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.png">
 <meta property="article:published_time" content="2024-05-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-05-22T03:17:15.906Z">
+<meta property="article:modified_time" content="2024-05-22T03:17:31.041Z">
 <meta property="article:author" content="F">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.jpg">
+<meta name="twitter:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png">
 
 <link rel="canonical" href="http://example.com/2024/05/22/MOS%20mos/">
 
@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2024-05-22 00:00:00 / Modified: 11:17:15" itemprop="dateCreated datePublished" datetime="2024-05-22T00:00:00+08:00">2024-05-22</time>
+              <time title="Created: 2024-05-22 00:00:00 / Modified: 11:17:31" itemprop="dateCreated datePublished" datetime="2024-05-22T00:00:00+08:00">2024-05-22</time>
             </span>
 
           
@@ -201,7 +201,7 @@
 <p>对于低边MOS，其源极（S）接到电源负极，栅源电压容易满足，驱动较简单。</p>
 <p>对于高边MOS，其源极（S）接到电机相线，其电压是不确定的，如果需要开通，需要通过自举电路提供栅极电压，驱动较复杂。</p>
 <p>一般情况下，MOS的导通内阻都如图2所示，随着VGS的增大而降低，但VGS大于10V之后，下降曲线变得平缓。为了达到最小的导通电阻(RDSON)，VGS的取值通常为10~15V</p>
-<p><img src="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.jpg" alt="典型应用电路"></p>
+<p><img src="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png" alt="典型应用电路"></p>
 <table>
 <thead>
 <tr>
