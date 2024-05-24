@@ -21,19 +21,22 @@
   </script>
 
 
-  <meta name="description" content="预驱三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。 通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器">
+  <meta name="description" content="无感方波无刷学习小记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="无感无刷方波">
 <meta property="og:url" content="http://example.com/2024/05/22/MOS%20mos/index.html">
 <meta property="og:site_name" content="FUN">
-<meta property="og:description" content="预驱三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。 通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器">
+<meta property="og:description" content="无感方波无刷学习小记">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_ds.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_app.png">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/%E9%A2%84%E9%A9%B1%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0.webp">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/HzZUFNzFhiaNCya6jc7HP1NYEjoOk5k7I1xdwxibNpXic035z94JuMjV95U5TiboGdsT7BEmKpc8ia8qbUj24Q1SKGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%B5%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.png">
 <meta property="article:published_time" content="2024-05-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-05-22T03:17:31.041Z">
+<meta property="article:modified_time" content="2024-05-24T09:02:41.937Z">
 <meta property="article:author" content="F">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png">
@@ -178,10 +181,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-05-22 00:00:00 / Modified: 11:17:31" itemprop="dateCreated datePublished" datetime="2024-05-22T00:00:00+08:00">2024-05-22</time>
+              <time title="Created: 2024-05-22 00:00:00" itemprop="dateCreated datePublished" datetime="2024-05-22T00:00:00+08:00">2024-05-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-05-24 17:02:41" itemprop="dateModified" datetime="2024-05-24T17:02:41+08:00">2024-05-24</time>
+              </span>
 
           
 
@@ -194,8 +203,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="预驱"><a href="#预驱" class="headerlink" title="预驱"></a>预驱</h1><p>三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。</p>
+        <p>无感方波无刷学习小记</p>
+<span id="more"></span>
+
+<h1 id="预驱"><a href="#预驱" class="headerlink" title="预驱"></a>预驱</h1><p>三相直流无刷电机由于其可靠性高、免维护的特点，逐渐取代有刷电机，成为汽车风机、水泵、油泵的首选动力来源。在设计电机控制器时，不能直接使用通用MCU的IO引脚驱动功率MOS，此时预驱芯片是最优选择。</p>
 <p>通用MCU或DSP的IO电压通常是5V\3.3V，IO的电流输出能力在20MA以下，不足以直接驱动功率MOSFET。所以使用通用MCU或DSP来设计电机驱动器时，通常需要搭配外部的MOSFET驱动器，我们称之为“预驱”。在设计汽车风机、水泵、油泵等电机驱动控制器时，使用车规MCU+车规预驱+车规N沟道功率MOSFET，可以适配不同功率、各种通信方式和各种驱动方式。<strong>为了提供MOS管开通所需要的电压，需要自举升压电路，驱动芯片的意义正是自举升压相关的一些电路</strong></p>
+<p>在驱动较大的 MOSFET 时会出现三个问题：<br>1 更高的栅极电容 - 数字信号用于驱动小负载（10-100 pF）。这比许多 MOSFET 的栅极电容要小得多，后者的栅极电容可达数千 pF。<br>2 更高的栅极电压 - 3.3 V 或 5 V 信号往往不够。通常需要 8-12 V 的电压才能完全打开 MOSFET。<br>3 开关 MOSFET 会产生从栅极返回驱动电路的反向的电流冲击。MOSFET 驱动器的设计就是为了处理这种反向电流。(参考文献：Laszlo Balogh 高速 MOSFET 栅极驱动电路设计和应用指南）。</p>
+<p>如何选择栅极驱动器<br>1 电流驱动能力<br>开关的导通和关断实际上是输入输出电容器的充放电过程。更高的灌电流和拉电流能力意味着更快的导通和关断速度，最终带来更小的开关损耗。<br>2 故障检测<br>栅极驱动器不仅用于驱动开关，还能保护开关甚至整个系统。例如，欠压锁定（UVLO）可确保栅极驱动器的电源处于良好状态，去饱和（DESAT）用于检测短路，有源米勒箝位可防止在快速开关系统中出现误导通。<br>3 抗扰性<br>共模瞬态抗扰度（CMTI）是指栅极驱动器输入和输出电路之间共模电压上升或下降的最大容许速率，它决定了该产品是否可用于快速开关系统。大功率系统以非常快的变化率运行，例如大于100 V&#x2F;ns时会产生非常大的电压瞬变。隔离栅极驱动器需要能够承受高于额定电平的CMTI，以防止低压电路侧产生噪声，并防止隔离势垒失效。<br>4 传播延迟<br>传播延迟是指从输入10%到输出90%的时间延迟（供应商之间可能有所不同）。这种延迟会影响器件之间的开关时序，这在高频应用中至关重要。设置死区时间可以避免直通乃至进一步损坏，死区时间设置得越少，开关损耗就会越小。<br>5 兼容性<br>在新项目中，如果没有重大设计变更，引脚对引脚的替换总是首选。选择规格和封装相似的栅极驱动器有利于快速设计。</p>
 <p>电机在运转过程中可能会遇到堵转而导致过流，因此MOS驱动电路需要具有保护功能，以防止烧坏控制器或电机。</p>
 <p>对于单个NMOS来说，在开通时，需要提供瞬间大电流向MOS内的寄生电容充电，栅源电压（VGS）达到一定阈值后，MOS才能完全开通。在MOS开通后，还需要维持合适的栅源电压（VGS），才可以保持开通状态。</p>
 <p>对于低边MOS，其源极（S）接到电源负极，栅源电压容易满足，驱动较简单。</p>
@@ -208,32 +222,51 @@
 <th align="left">BLDC无刷直流电机方案</th>
 <th>优点</th>
 <th>缺点</th>
+<th></th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">MCU+预驱+驱动</td>
 <td>灵活，IC选择性高，适用于各类大中小功率的控制器</td>
 <td>集成度低                     PCB板面积较大</td>
+<td></td>
 </tr>
 <tr>
 <td align="left">MCU+[预驱+驱动]</td>
 <td>针对单一功率应用，集成度高，PCB面积较小</td>
 <td>功率不能做大</td>
+<td></td>
 </tr>
 <tr>
 <td align="left">[MCU+预驱]+驱动</td>
 <td>集成度较高，MOSFET可以灵活选择，适用于各类中小功率的控制器</td>
 <td>由于预驱集成在MCU中，预驱的耐压和驱动能力做不高，无法适应大功率控制器</td>
+<td></td>
 </tr>
 <tr>
 <td align="left">SOC</td>
 <td>集成高，性能高，常用于塑封电机应用场合</td>
 <td>功率不能做大</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left"><img src="https://ziiiro.github.io/images/foc/IR2101S_ds.png" alt="IR2101S 手册"></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
-<h1 id="mos"><a href="#mos" class="headerlink" title="mos"></a>mos</h1><p>重点关注<strong>耐压值、耐流值、耐温值、开关损耗</strong><br><strong>电流选择</strong><br>电机驱动瞬间电流 &gt; 额定电流+5~8A<br>选择 MOS管漏极最大电流  &gt; 额定电流 * 10<br>如电机：额定功率&#x3D;0.5A  选择MOS管漏极最大电流 &gt; 5A<br>选择MOS管时注意：应该选择内阻小的MOS管<br>原因：内阻小，压降小，MOS管功耗小，发热量小；</p>
-<p><img src="https://ziiiro.github.io/images/foc/IR2101S_ds.png" alt="IR2101S 手册"></p>
 <p><img src="https://ziiiro.github.io/images/foc/IR2101S_app.png" alt="IR2101S 框图"></p>
+<p><img src="https://ziiiro.github.io/images/foc/%E9%A2%84%E9%A9%B1%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0.webp" alt="预驱主要参数"></p>
+<p>对于拉灌电流能力这一参数需要进一步解释，从等效层面上讲，MOS管的各极之间都存在寄生电容，MOS开通的过程就是对极间电容充电的过程，所谓灌电流就是将电流灌进G极使得MOS开通，拉电流就是将电荷从G极抽出使得MOS关断，拉灌电流的力度决定了MOS开通的程度。</p>
+<p>对驱动芯片进行选型时， 需要格外注意将驱动芯片拉灌电流能力值与MOS管的参数相匹配，如果不匹配将会出现俗称为“带不动”的情况。那么这一值具体应该怎么匹配呢？还是以IRLB4030和IR2101S为例进行计算：<br>这之中用到了MOS管的反向恢复电荷<img src="https://mmbiz.qpic.cn/mmbiz_png/HzZUFNzFhiaNCya6jc7HP1NYEjoOk5k7I1xdwxibNpXic035z94JuMjV95U5TiboGdsT7BEmKpc8ia8qbUj24Q1SKGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片">，IRLB4030的恢复电荷在125摄氏度时为130nC，我们取为150nC，假设电机控制PWM波的频率为10KHz，即周期为100us，假设PWM电压从零到最大值的阶跃时间为1us，那么MOS管需要的电流值为：<br><img src="https://ziiiro.github.io/images/foc/mos%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%B5%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="mos驱动电流计算公式"><br>那也就是说驱动芯片拉灌电流值应该至少达到150mA才能带的动IRLB4030，IR2101S的拉灌电流值在130mA到270mA之间，基本符合条件，因此这两款驱动芯片和MOS管的匹配使用是合理的。</p>
+<h1 id="mos"><a href="#mos" class="headerlink" title="mos"></a>mos</h1><p>重点关注<strong>耐压值、耐流值、耐温值、开关损耗</strong><br><strong>电流选择</strong><br>电机驱动瞬间电流 &gt; 额定电流+5~8A<br>选择 MOS管漏极最大电流  &gt; 额定电流 * 10<br>如电机：额定功率&#x3D;0.5A  选择MOS管漏极最大电流 &gt; 5A<br>选择MOS管时注意：应该选择内阻小的MOS管<br>原因：内阻小，压降小，MOS管功耗小，发热量小；</p>
 <p><img src="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.png" alt="MOS管主要参数"></p>
 
     </div>
