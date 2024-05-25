@@ -32,11 +32,10 @@
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_ds.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/IR2101S_app.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/%E9%A2%84%E9%A9%B1%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0.webp">
-<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/HzZUFNzFhiaNCya6jc7HP1NYEjoOk5k7I1xdwxibNpXic035z94JuMjV95U5TiboGdsT7BEmKpc8ia8qbUj24Q1SKGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%B5%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.png">
 <meta property="article:published_time" content="2024-05-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-05-24T09:02:41.937Z">
+<meta property="article:modified_time" content="2024-05-25T08:48:13.830Z">
 <meta property="article:author" content="F">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png">
@@ -189,7 +188,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-24 17:02:41" itemprop="dateModified" datetime="2024-05-24T17:02:41+08:00">2024-05-24</time>
+                <time title="Modified: 2024-05-25 16:48:13" itemprop="dateModified" datetime="2024-05-25T16:48:13+08:00">2024-05-25</time>
               </span>
 
           
@@ -265,9 +264,36 @@
 <p><img src="https://ziiiro.github.io/images/foc/IR2101S_app.png" alt="IR2101S 框图"></p>
 <p><img src="https://ziiiro.github.io/images/foc/%E9%A2%84%E9%A9%B1%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0.webp" alt="预驱主要参数"></p>
 <p>对于拉灌电流能力这一参数需要进一步解释，从等效层面上讲，MOS管的各极之间都存在寄生电容，MOS开通的过程就是对极间电容充电的过程，所谓灌电流就是将电流灌进G极使得MOS开通，拉电流就是将电荷从G极抽出使得MOS关断，拉灌电流的力度决定了MOS开通的程度。</p>
-<p>对驱动芯片进行选型时， 需要格外注意将驱动芯片拉灌电流能力值与MOS管的参数相匹配，如果不匹配将会出现俗称为“带不动”的情况。那么这一值具体应该怎么匹配呢？还是以IRLB4030和IR2101S为例进行计算：<br>这之中用到了MOS管的反向恢复电荷<img src="https://mmbiz.qpic.cn/mmbiz_png/HzZUFNzFhiaNCya6jc7HP1NYEjoOk5k7I1xdwxibNpXic035z94JuMjV95U5TiboGdsT7BEmKpc8ia8qbUj24Q1SKGw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片">，IRLB4030的恢复电荷在125摄氏度时为130nC，我们取为150nC，假设电机控制PWM波的频率为10KHz，即周期为100us，假设PWM电压从零到最大值的阶跃时间为1us，那么MOS管需要的电流值为：<br><img src="https://ziiiro.github.io/images/foc/mos%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%B5%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="mos驱动电流计算公式"><br>那也就是说驱动芯片拉灌电流值应该至少达到150mA才能带的动IRLB4030，IR2101S的拉灌电流值在130mA到270mA之间，基本符合条件，因此这两款驱动芯片和MOS管的匹配使用是合理的。</p>
+<p>对驱动芯片进行选型时， 需要格外注意将驱动芯片拉灌电流能力值与MOS管的参数相匹配，如果不匹配将会出现俗称为“带不动”的情况。那么这一值具体应该怎么匹配呢？还是以IRLB4030和IR2101S为例进行计算：<br>这之中用到了MOS管的反向恢复电荷!Qrr，IRLB4030的恢复电荷在125摄氏度时为130nC，我们取为150nC，假设电机控制PWM波的频率为10KHz，即周期为100us，假设PWM电压从零到最大值的阶跃时间为1us，那么MOS管需要的电流值为：<br><img src="https://ziiiro.github.io/images/foc/mos%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%B5%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png" alt="mos驱动电流计算公式"><br>那也就是说驱动芯片拉灌电流值应该至少达到150mA才能带的动IRLB4030，IR2101S的拉灌电流值在130mA到270mA之间，基本符合条件，因此这两款驱动芯片和MOS管的匹配使用是合理的。</p>
 <h1 id="mos"><a href="#mos" class="headerlink" title="mos"></a>mos</h1><p>重点关注<strong>耐压值、耐流值、耐温值、开关损耗</strong><br><strong>电流选择</strong><br>电机驱动瞬间电流 &gt; 额定电流+5~8A<br>选择 MOS管漏极最大电流  &gt; 额定电流 * 10<br>如电机：额定功率&#x3D;0.5A  选择MOS管漏极最大电流 &gt; 5A<br>选择MOS管时注意：应该选择内阻小的MOS管<br>原因：内阻小，压降小，MOS管功耗小，发热量小；</p>
 <p><img src="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.png" alt="MOS管主要参数"></p>
+<h1 id="换向"><a href="#换向" class="headerlink" title="换向"></a>换向</h1><p>无刷直流电机（BLDC）的无感控制技术主要依靠检测电机绕组中的反电动势（BEMF），从而估测转子位置，进行适时的换向。通过模拟-数字转换器（ADC）和比较器实现反电动势检测是两种常见的方法，它们各有优缺点。</p>
+<h3 id="通过ADC实现"><a href="#通过ADC实现" class="headerlink" title="通过ADC实现"></a>通过ADC实现</h3><p><strong>优点：</strong></p>
+<ol>
+<li><strong>灵活性和精确度</strong>：使用ADC可以更精确地读取BEMF的值，方便进行更复杂的处理和分析，提高控制算法的准确性和灵活性。</li>
+<li><strong>数字滤波</strong>：可以使用软件滤波技术来消除噪声影响，进一步提高信号质量。</li>
+<li><strong>多功能性</strong>：ADC不只能用于BEMF检测，也可以用于其他模拟信号的采集，如温度监测，从而增强系统的整体功能。</li>
+<li><strong>参数调整与优化</strong>：通过软件对ADC采集的数据进行处理，可以在不更改硬件的情况下调整系统的动态响应，提供较好的系统适应性。</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><strong>成本与复杂性</strong>：与简单的比较器相比，ADC使得电路设计更加复杂，成本也相对较高。</li>
+<li><strong>处理延迟</strong>：ADC的采样和转换过程，加上随后的数字处理，可能引入额外的延迟，对高速应用的性能造成影响。</li>
+<li><strong>资源占用</strong>：对于嵌入式系统，使用ADC进行BEMF检测可能会占用宝贵的处理器资源和ADC通道。</li>
+</ol>
+<h3 id="通过比较器实现"><a href="#通过比较器实现" class="headerlink" title="通过比较器实现"></a>通过比较器实现</h3><p><strong>优点：</strong></p>
+<ol>
+<li><strong>简单与成本低</strong>：比较器的电路简单，成本低，对于成本敏感型应用非常有利。</li>
+<li><strong>响应速度快</strong>：比较器可以实现几乎即时的BEMF电平变化检测，对于需要快速换向的高速电机特别适合。</li>
+<li><strong>硬件直接控制</strong>：直接通过硬件实现换向时机的检测，减少了软件干预，减少了处理延迟。</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><strong>灵活性差</strong>：比较器的阈值和逻辑固定，调整灵活性不如ADC。</li>
+<li><strong>抗干扰能力弱</strong>：比较器对信号中的噪声比较敏感，需要仔细设计滤波电路来改善性能。</li>
+<li><strong>精度限制</strong>：与ADC相比，比较器实现的BEMF检测精度较低，可能无法实现非常精确的控制。</li>
+</ol>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>选择哪一种反电动势检测方法取决于具体的应用需求。对于成本敏感且对速度要求高的应用，可能更适合使用比较器方法。而对于需要高度精确控制，或者具有复杂控制逻辑的系统，则ADC方法可能更为合适。在设计初期，应充分考虑系统的性能、成本和复杂度需求，以选择最适合的方案。</p>
 
     </div>
 
@@ -345,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E9%A9%B1"><span class="nav-number">1.</span> <span class="nav-text">预驱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mos"><span class="nav-number">2.</span> <span class="nav-text">mos</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E9%A9%B1"><span class="nav-number">1.</span> <span class="nav-text">预驱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mos"><span class="nav-number">2.</span> <span class="nav-text">mos</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%A2%E5%90%91"><span class="nav-number">3.</span> <span class="nav-text">换向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87ADC%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.0.1.</span> <span class="nav-text">通过ADC实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E6%AF%94%E8%BE%83%E5%99%A8%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.0.2.</span> <span class="nav-text">通过比较器实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-number">3.0.3.</span> <span class="nav-text">结论</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
