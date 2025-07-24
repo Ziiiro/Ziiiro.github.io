@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E9%A9%B1%E5%8A%A8%E7%94%B5%E6%B5%81%E8%AE%A1%E7%AE%97%E5%85%AC%E5%BC%8F.png">
 <meta property="og:image" content="https://ziiiro.github.io/images/foc/mos%E5%8F%82%E6%95%B0.png">
 <meta property="article:published_time" content="2024-05-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-05-25T08:48:13.830Z">
+<meta property="article:modified_time" content="2025-03-22T08:39:27.763Z">
 <meta property="article:author" content="F">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ziiiro.github.io/images/foc/%E5%85%B8%E5%9E%8B%E5%9B%BE.png">
@@ -188,7 +188,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-05-25 16:48:13" itemprop="dateModified" datetime="2024-05-25T16:48:13+08:00">2024-05-25</time>
+                <time title="Modified: 2025-03-22 16:39:27" itemprop="dateModified" datetime="2025-03-22T16:39:27+08:00">2025-03-22</time>
               </span>
 
           
@@ -294,6 +294,21 @@
 <li><strong>精度限制</strong>：与ADC相比，比较器实现的BEMF检测精度较低，可能无法实现非常精确的控制。</li>
 </ol>
 <h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>选择哪一种反电动势检测方法取决于具体的应用需求。对于成本敏感且对速度要求高的应用，可能更适合使用比较器方法。而对于需要高度精确控制，或者具有复杂控制逻辑的系统，则ADC方法可能更为合适。在设计初期，应充分考虑系统的性能、成本和复杂度需求，以选择最适合的方案。</p>
+<p>方波的有blheli，foc的有vesc</p>
+<p>an1078  滑膜<br>an1292  锁相环<br>英飞凌磁链反正切，锁相环<br>还不满意加个vesc的非线性磁链，足够了。</p>
+<p>从启动到运行之间的切换极其重要，特别是带负载的情况下，这个不是可有可无的小问题，一般的逐步逼近切换方式不能满足要求，可以考虑双dq切换算法。</p>
+<p>zest算法</p>
+<p>水泵控制器，原来的市场是分成1100w,1500w,2200w</p>
+<p>凌鸥芯片应该还可以，但算法评价好像不太高，还比不上中微。<br>中微滑膜</p>
+<p>除了高频注入，没有一个方法是可以零速真正闭环的！无论方波还是foc<br>接近0速闭环办法很多，非止一种。其中之一就是改良书中的锁相环算法就会有非常满意的效果</p>
+<p>汇川MD500_E那套无感算法，大概是用DQ轴电流差值，以及反电势差值搭建的观测器 存疑</p>
+<p>做一般风扇类的低速无感方波，用adc就行。做高速航模就必须得比较器。</p>
+<p>线电压最大峰值接近母线电压，母线电压&#x2F;1.414就是线电压的最大值了，如果你线电压已经接近这个最大值那么转速就升不上去了，得换永磁体或者改匝数</p>
+<p>要把无感方波研究好，就不要看什么狗屁论文和仿真了，直接买一个好盈电调，测绘其电路，观察启动，观察空载运行，观察带载运行，看看电路各部分的波形，这就是最快的捷径。</p>
+<p>无感foc就看大疆做的电调，特别是以前用ti 28027f做的电调。</p>
+<p>用磁滞制动器拖动只是大阻力负载，不是大惯量负载！要像大螺旋桨之类的才算。</p>
+<p>制定一个规则，不需要人为设定什么上升曲线，电机怎么转，那是它的事情。就好像碗里的弹珠，你不用考虑它的轨迹，你也规划不了，但最后它在碗和重力的约束下一点会达到碗的最低处。<br>做电机控制，我认为我们所需的知识已经足够，无非就是反电势，磁链，电感变化，但怎么去组合，知道怎样去组合，怎么找到灵感，这种运用之妙就看自己了，实践才是培养直觉的唯一路径，绝大部分人不可能靠着纸笔和计算机仿真就能得到，打死不信！</p>
+<p>鼎阳示波器<br>汉泰CC60</p>
 
     </div>
 
