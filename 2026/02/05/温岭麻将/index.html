@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+
+  <meta name="description" content="温岭麻将（台州温岭本地规则）胡数与台数算法指南">
+<meta property="og:type" content="article">
+<meta property="og:title" content="温岭麻将">
+<meta property="og:url" content="http://example.com/2026/02/05/%E6%B8%A9%E5%B2%AD%E9%BA%BB%E5%B0%86/index.html">
+<meta property="og:site_name" content="FUN">
+<meta property="og:description" content="温岭麻将（台州温岭本地规则）胡数与台数算法指南">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-02-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-05T03:47:04.228Z">
+<meta property="article:author" content="F">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2026/02/05/%E6%B8%A9%E5%B2%AD%E9%BA%BB%E5%B0%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>温岭麻将 | FUN</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">FUN</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/05/%E6%B8%A9%E5%B2%AD%E9%BA%BB%E5%B0%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="F">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FUN">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          温岭麻将
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-02-05 00:00:00 / Modified: 11:47:04" itemprop="dateCreated datePublished" datetime="2026-02-05T00:00:00+08:00">2026-02-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="温岭麻将（台州温岭本地规则）胡数与台数算法指南"><a href="#温岭麻将（台州温岭本地规则）胡数与台数算法指南" class="headerlink" title="温岭麻将（台州温岭本地规则）胡数与台数算法指南"></a><strong>温岭麻将（台州温岭本地规则）胡数与台数算法指南</strong></h1><span id="more"></span>
+
+<p>这是一份为您精心整理的<strong>温岭麻将（台州温岭本地规则）胡数与台数算法指南</strong>。温岭麻将以其“算分细腻、变化多端”著称，尤其是<strong>辣子</strong>的设定让牌局充满了博弈感。</p>
+<hr>
+<h2 id="🀄-温岭麻将算分核心指南"><a href="#🀄-温岭麻将算分核心指南" class="headerlink" title="🀄 温岭麻将算分核心指南"></a>🀄 温岭麻将算分核心指南</h2><p>温岭麻将的得分由 <strong>“胡数”</strong> 和 <strong>“台数”</strong> 两部分组成。</p>
+<h3 id="一、-胡数计算（基础分）"><a href="#一、-胡数计算（基础分）" class="headerlink" title="一、 胡数计算（基础分）"></a>一、 胡数计算（基础分）</h3><p>胡数是计算得分的基石，主要根据牌组的组成方式（刻、杠）来叠加。</p>
+<table>
+<thead>
+<tr>
+<th><strong>牌型种类</strong></th>
+<th><strong>手里刻（暗刻）</strong></th>
+<th><strong>碰出（明刻）</strong></th>
+<th><strong>暗杠</strong></th>
+<th><strong>明杠</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>幺九牌&#x2F;风牌&#x2F;中发</strong></td>
+<td>8胡</td>
+<td>4胡</td>
+<td>32胡</td>
+<td>16胡</td>
+</tr>
+<tr>
+<td><strong>2-8 中间牌</strong></td>
+<td>4胡</td>
+<td>2胡</td>
+<td>16胡</td>
+<td>8胡</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p><strong>特殊胡数：</strong></p>
+<ul>
+<li><p><strong>自摸：</strong> +2胡。</p>
+</li>
+<li><p><strong>捉鬼（单吊）：</strong> +2胡。</p>
+</li>
+<li><p><strong>靠柄（边张&#x2F;吊头）：</strong> 如 $89$ 候 $7$，或 $12$ 候 $3$，+2胡。</p>
+</li>
+<li><p><strong>自摸嵌档：</strong> 共+4胡（自摸2胡 + 嵌档2胡，如 $7$、$9$ 夹 $8$）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="二、-台数计算（翻倍项）"><a href="#二、-台数计算（翻倍项）" class="headerlink" title="二、 台数计算（翻倍项）"></a>二、 台数计算（翻倍项）</h3><p>台数通常决定了最终分数的量级，1台通常对应一定的底分翻倍或加分。</p>
+<h4 id="1-基础台数"><a href="#1-基础台数" class="headerlink" title="1. 基础台数"></a>1. 基础台数</h4><ul>
+<li><p><strong>硬碰硬：</strong> 无财神胡牌，+1台。</p>
+</li>
+<li><p><strong>自摸财神：</strong> +1台。</p>
+</li>
+<li><p><strong>双财神胡：</strong> +1台。</p>
+</li>
+<li><p><strong>财神归位：</strong> 财神正好充当其本身代表的牌。+1台。</p>
+</li>
+<li><p><strong>旁胡：</strong> 全顺子+一对将。+1台（若+硬碰硬则为2台）。</p>
+</li>
+<li><p><strong>对对胡：</strong> 全部由刻子组成的胡牌。+2台。</p>
+</li>
+<li><p><strong>混一色：</strong> 同一花色+风&#x2F;字牌。+1台。</p>
+</li>
+<li><p><strong>杠上开花：</strong> 补张后立即胡牌。+1台。</p>
+</li>
+<li><p><strong>抢杠胡：</strong> 拦截他人的明杠胡牌。+1台。</p>
+</li>
+</ul>
+<h4 id="2-刻子-字牌台数"><a href="#2-刻子-字牌台数" class="headerlink" title="2. 刻子&#x2F;字牌台数"></a>2. 刻子&#x2F;字牌台数</h4><ul>
+<li><p><strong>红中&#x2F;发财&#x2F;本命风：</strong> 刻子（3张）或杠（4张）即为1台。</p>
+</li>
+<li><p><strong>白板：</strong> 4胡，计1台。</p>
+</li>
+<li><p><strong>花牌：</strong> 对号花计1台。</p>
+</li>
+</ul>
+<hr>
+<h3 id="三、-辣子（最高上限-直接封顶）"><a href="#三、-辣子（最高上限-直接封顶）" class="headerlink" title="三、 辣子（最高上限&#x2F;直接封顶）"></a>三、 辣子（最高上限&#x2F;直接封顶）</h3><p>“辣子”代表了本局最高分，出现以下情况直接按辣子计分：</p>
+<ul>
+<li><p><strong>三财神&#x2F;四白板：</strong> 抓到即可倒牌。</p>
+</li>
+<li><p><strong>财神脚：</strong> 两个财神做对子（将）。</p>
+</li>
+<li><p><strong>双财神归位：</strong> 两个财神都当其本身的牌做对子。</p>
+</li>
+<li><p><strong>暗杠风&#x2F;中&#x2F;发：</strong> 必须是自己的本命风或红中、发财的暗杠。</p>
+</li>
+<li><p><strong>清一色：</strong> 全由一种花色组成。</p>
+</li>
+<li><p><strong>全花：</strong> 集齐春夏秋冬或梅兰竹菊（具体规则视开局约定）。</p>
+</li>
+</ul>
+<hr>
+<h3 id="四、-包场规则（包牌-承包制度）"><a href="#四、-包场规则（包牌-承包制度）" class="headerlink" title="四、 包场规则（包牌&#x2F;承包制度）"></a>四、 包场规则（包牌&#x2F;承包制度）</h3><p>温岭麻将非常注重“防守”，包场是为了惩罚随意乱打导致的他人胡大牌。</p>
+<blockquote>
+<p>[!IMPORTANT]</p>
+<p><strong>什么是包场？</strong></p>
+<p>在剩余牌数很少（倒数15双或8双）时，如果你乱吃、乱碰或者打生牌导致他人胡牌，你需要<strong>替全场付钱</strong>。</p>
+</blockquote>
+<h4 id="包场赔付逻辑："><a href="#包场赔付逻辑：" class="headerlink" title="包场赔付逻辑："></a>包场赔付逻辑：</h4><p>假设 D 胡了，C 属于包场违规：</p>
+<ol>
+<li><p><strong>全包：</strong> C 需要支付 A、B、C 三人原本应付给 D 的所有分。</p>
+</li>
+<li><p><strong>横向结算：</strong> C 还需要额外替 A 补偿给 B（或反之）在这一局中的胡数差额。</p>
+</li>
+<li><p><strong>计算公式示例：</strong></p>
+<p> $$Total &#x3D; (胡数 \times 3) + 补偿差额$$</p>
+</li>
+</ol>
+<hr>
+<h3 id="💡-给新手的建议"><a href="#💡-给新手的建议" class="headerlink" title="💡 给新手的建议"></a>💡 给新手的建议</h3><ol>
+<li><p><strong>优先保台：</strong> 财神虽然好用，但“硬碰硬”的台数往往能让基础分翻倍。</p>
+</li>
+<li><p><strong>盯紧包场：</strong> 牌局进入最后 <strong>15张（双）</strong> 时，千万不要乱打生牌，否则一张牌可能让你输掉三倍。</p>
+</li>
+<li><p><strong>注意风头：</strong> 自己的本命风刻子不仅有8胡，还有1台，性价比极高。</p>
+</li>
+</ol>
+<hr>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/10/18/%E5%90%84%E7%B1%BB%E6%89%91%E5%85%8B%E7%8E%A9%E6%B3%95/" rel="prev" title="各类扑克玩法">
+      <i class="fa fa-chevron-left"></i> 各类扑克玩法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2026/02/05/%E7%BB%B4%E7%94%9F%E7%B4%A0/" rel="next" title="维生素">
+      维生素 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%A9%E5%B2%AD%E9%BA%BB%E5%B0%86%EF%BC%88%E5%8F%B0%E5%B7%9E%E6%B8%A9%E5%B2%AD%E6%9C%AC%E5%9C%B0%E8%A7%84%E5%88%99%EF%BC%89%E8%83%A1%E6%95%B0%E4%B8%8E%E5%8F%B0%E6%95%B0%E7%AE%97%E6%B3%95%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">温岭麻将（台州温岭本地规则）胡数与台数算法指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%F0%9F%80%84-%E6%B8%A9%E5%B2%AD%E9%BA%BB%E5%B0%86%E7%AE%97%E5%88%86%E6%A0%B8%E5%BF%83%E6%8C%87%E5%8D%97"><span class="nav-number">1.1.</span> <span class="nav-text">🀄 温岭麻将算分核心指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E8%83%A1%E6%95%B0%E8%AE%A1%E7%AE%97%EF%BC%88%E5%9F%BA%E7%A1%80%E5%88%86%EF%BC%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、 胡数计算（基础分）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-%E5%8F%B0%E6%95%B0%E8%AE%A1%E7%AE%97%EF%BC%88%E7%BF%BB%E5%80%8D%E9%A1%B9%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、 台数计算（翻倍项）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E5%8F%B0%E6%95%B0"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. 基础台数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%88%BB%E5%AD%90-%E5%AD%97%E7%89%8C%E5%8F%B0%E6%95%B0"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. 刻子&#x2F;字牌台数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81-%E8%BE%A3%E5%AD%90%EF%BC%88%E6%9C%80%E9%AB%98%E4%B8%8A%E9%99%90-%E7%9B%B4%E6%8E%A5%E5%B0%81%E9%A1%B6%EF%BC%89"><span class="nav-number">1.1.3.</span> <span class="nav-text">三、 辣子（最高上限&#x2F;直接封顶）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-%E5%8C%85%E5%9C%BA%E8%A7%84%E5%88%99%EF%BC%88%E5%8C%85%E7%89%8C-%E6%89%BF%E5%8C%85%E5%88%B6%E5%BA%A6%EF%BC%89"><span class="nav-number">1.1.4.</span> <span class="nav-text">四、 包场规则（包牌&#x2F;承包制度）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%9C%BA%E8%B5%94%E4%BB%98%E9%80%BB%E8%BE%91%EF%BC%9A"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">包场赔付逻辑：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%F0%9F%92%A1-%E7%BB%99%E6%96%B0%E6%89%8B%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.1.5.</span> <span class="nav-text">💡 给新手的建议</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">F</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">F</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
